@@ -1,0 +1,232 @@
+\profile "Java Profile";
+
+\settings {
+"#Proof-Settings-Config-File
+#Fri Sep 08 01:15:11 CEST 2023
+[Labels]UseOriginLabels=true
+[StrategyProperty]QUERYAXIOM_OPTIONS_KEY=QUERYAXIOM_ON
+[SMTSettings]invariantForall=false
+[Strategy]ActiveStrategy=JavaCardDLStrategy
+[StrategyProperty]USER_TACLETS_OPTIONS_KEY1=USER_TACLETS_OFF
+[StrategyProperty]QUANTIFIERS_OPTIONS_KEY=QUANTIFIERS_NON_SPLITTING_WITH_PROGS
+[StrategyProperty]USER_TACLETS_OPTIONS_KEY2=USER_TACLETS_OFF
+[Choice]DefaultChoices=JavaCard-JavaCard\\:off, Strings-Strings\\:on, assertions-assertions\\:safe, bigint-bigint\\:on, floatRules-floatRules\\:strictfpOnly, initialisation-initialisation\\:disableStaticInitialisation, intRules-intRules\\:arithmeticSemanticsIgnoringOF, integerSimplificationRules-integerSimplificationRules\\:full, javaLoopTreatment-javaLoopTreatment\\:efficient, mergeGenerateIsWeakeningGoal-mergeGenerateIsWeakeningGoal\\:off, methodExpansion-methodExpansion\\:modularOnly, modelFields-modelFields\\:treatAsAxiom, moreSeqRules-moreSeqRules\\:off, permissions-permissions\\:off, programRules-programRules\\:Java, reach-reach\\:on, runtimeExceptions-runtimeExceptions\\:ban, sequences-sequences\\:on, wdChecks-wdChecks\\:off, wdOperator-wdOperator\\:L
+[StrategyProperty]LOOP_OPTIONS_KEY=LOOP_SCOPE_INV_TACLET
+[StrategyProperty]INF_FLOW_CHECK_PROPERTY=INF_FLOW_CHECK_FALSE
+[SMTSettings]UseBuiltUniqueness=false
+[SMTSettings]explicitTypeHierarchy=false
+[SMTSettings]instantiateHierarchyAssumptions=true
+[StrategyProperty]NON_LIN_ARITH_OPTIONS_KEY=NON_LIN_ARITH_DEF_OPS
+[SMTSettings]SelectedTaclets=
+[StrategyProperty]DEP_OPTIONS_KEY=DEP_ON
+[StrategyProperty]AUTO_INDUCTION_OPTIONS_KEY=AUTO_INDUCTION_OFF
+[Strategy]MaximumNumberOfAutomaticApplications=7000
+[StrategyProperty]STOPMODE_OPTIONS_KEY=STOPMODE_DEFAULT
+[StrategyProperty]CLASS_AXIOM_OPTIONS_KEY=CLASS_AXIOM_DELAYED
+[SMTSettings]useConstantsForBigOrSmallIntegers=true
+[StrategyProperty]MPS_OPTIONS_KEY=MPS_MERGE
+[Strategy]Timeout=-1
+[StrategyProperty]QUERY_NEW_OPTIONS_KEY=QUERY_ON
+[SMTSettings]useUninterpretedMultiplication=true
+[StrategyProperty]BLOCK_OPTIONS_KEY=BLOCK_CONTRACT_INTERNAL
+[StrategyProperty]METHOD_OPTIONS_KEY=METHOD_CONTRACT
+[StrategyProperty]USER_TACLETS_OPTIONS_KEY3=USER_TACLETS_OFF
+[SMTSettings]maxGenericSorts=2
+[StrategyProperty]OSS_OPTIONS_KEY=OSS_ON
+[StrategyProperty]SPLITTING_OPTIONS_KEY=SPLITTING_DELAYED
+[SMTSettings]integersMinimum=-2147483645
+[StrategyProperty]VBT_PHASE=VBT_SYM_EX
+[SMTSettings]integersMaximum=2147483645
+"
+}
+
+\javaSource "../../src";
+
+\include "../../iSet.key";
+
+\proofObligation "#Proof Obligation Settings
+#Fri Sep 08 01:15:11 CEST 2023
+contract=Tree[Tree\\:\\:isRed(Tree)].JML accessible clause.0
+name=Tree[Tree\\:\\:isRed(Tree)].JML accessible clause.0
+class=de.uka.ilkd.key.proof.init.DependencyContractPO
+";
+
+\proof {
+(keyLog "0" (keyUser "johanna" ) (keyVersion "4d5d8c5cb0b36bcbdc74ead5888a2f6bbedfe5ef"))
+
+(autoModeTime "378")
+
+(branch "dummy ID"
+ (builtin "One Step Simplification" (formula "1") (newnames "t,anon_heap"))
+(rule "impRight" (formula "1"))
+(rule "andLeft" (formula "1"))
+(rule "andLeft" (formula "1"))
+(rule "andLeft" (formula "1"))
+(rule "eqSymm" (formula "5"))
+(rule "Query_axiom_for_isRed_Tree__in_Tree" (formula "5") (term "1") (inst "isRed_sk=isRed_sk_0") (inst "#p0=t") (inst "#res=b"))
+(rule "Query_axiom_for_isRed_Tree__in_Tree" (formula "6") (term "0") (inst "isRed_sk=isRed_sk_1") (inst "#p0=t") (inst "#res=b"))
+(rule "boxToDiamond" (formula "2") (term "1"))
+ (builtin "One Step Simplification" (formula "2"))
+(rule "notLeft" (formula "2"))
+(rule "boxToDiamond" (formula "1") (term "1"))
+ (builtin "One Step Simplification" (formula "1"))
+(rule "notLeft" (formula "1"))
+(rule "limit_Tree_footprint" (formula "5") (term "2,1,1,0,0,0"))
+(rule "methodBodyExpand" (formula "7") (term "1") (newnames "heapBefore_isRed,savedHeapBefore_isRed"))
+ (builtin "One Step Simplification" (formula "7"))
+(rule "methodBodyExpand" (formula "6") (term "1") (newnames "heapBefore_isRed_0,savedHeapBefore_isRed_0"))
+ (builtin "One Step Simplification" (formula "6"))
+(rule "returnUnfold" (formula "7") (term "1") (inst "#v0=b_1"))
+(rule "variableDeclarationAssign" (formula "7") (term "1"))
+(rule "variableDeclaration" (formula "7") (term "1") (newnames "b_1"))
+(rule "returnUnfold" (formula "6") (term "1") (inst "#v0=b_1"))
+(rule "variableDeclarationAssign" (formula "6") (term "1"))
+(rule "variableDeclaration" (formula "6") (term "1") (newnames "b_2"))
+(rule "compound_assignment_3_nonsimple" (formula "7") (term "1"))
+(rule "compound_assignment_3_nonsimple" (formula "6") (term "1"))
+(rule "ifElseUnfold" (formula "7") (term "1") (inst "#boolv=b_2"))
+(rule "variableDeclaration" (formula "7") (term "1") (newnames "b_3"))
+(rule "compound_assignment_2" (formula "7") (term "1") (inst "#v=b_4"))
+(rule "variableDeclarationAssign" (formula "7") (term "1"))
+(rule "variableDeclaration" (formula "7") (term "1") (newnames "b_4"))
+(rule "inequality_comparison_simple" (formula "7") (term "1"))
+ (builtin "One Step Simplification" (formula "7"))
+(rule "compound_assignment_1_new" (formula "7") (term "1"))
+ (builtin "One Step Simplification" (formula "7"))
+(rule "ifthenelse_negated" (formula "7") (term "0,1,0"))
+(rule "ifElseUnfold" (formula "6") (term "1") (inst "#boolv=b_3"))
+(rule "variableDeclaration" (formula "6") (term "1") (newnames "b_5"))
+(rule "compound_assignment_2" (formula "6") (term "1") (inst "#v=b_6"))
+(rule "variableDeclarationAssign" (formula "6") (term "1"))
+(rule "variableDeclaration" (formula "6") (term "1") (newnames "b_6"))
+(rule "inequality_comparison_simple" (formula "6") (term "1"))
+ (builtin "One Step Simplification" (formula "6"))
+(rule "compound_assignment_1_new" (formula "6") (term "1"))
+ (builtin "One Step Simplification" (formula "6"))
+(rule "ifthenelse_negated" (formula "6") (term "0,1,0"))
+(rule "ifElseSplit" (formula "7"))
+(branch "if b_3 true"
+    (builtin "One Step Simplification" (formula "1"))
+    (builtin "One Step Simplification" (formula "8"))
+   (rule "replace_known_left" (formula "7") (term "0,0,1,0") (ifseqformula "1"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "replace_known_left" (formula "7") (term "0,1,1,0,0,0,0") (ifseqformula "1"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "replace_known_left" (formula "5") (term "0") (ifseqformula "1"))
+    (builtin "One Step Simplification" (formula "5"))
+   (rule "true_left" (formula "5"))
+   (rule "assignment" (formula "7") (term "1"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "applyEq" (formula "2") (term "1,1") (ifseqformula "1"))
+   (rule "applyEq" (formula "2") (term "1,0") (ifseqformula "1"))
+   (rule "applyEq" (formula "6") (term "0,1,0,0") (ifseqformula "1"))
+   (rule "limit_Tree_footprint" (formula "2") (term "1"))
+   (rule "methodCallReturn" (formula "7") (term "1"))
+   (rule "assignment" (formula "7") (term "1"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "methodCallEmpty" (formula "7") (term "1"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "emptyModality" (formula "7") (term "1"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "apply_eq_boolean_rigid" (formula "8") (term "1") (ifseqformula "7"))
+    (builtin "One Step Simplification" (formula "8"))
+   (rule "notRight" (formula "8"))
+   (rule "applyEqRigid" (formula "7") (term "0,0,0,1") (ifseqformula "1"))
+   (rule "eqSymm" (formula "7") (term "0,0,1"))
+   (rule "ifElseSplit" (formula "7"))
+   (branch "if b_5 true"
+       (builtin "One Step Simplification" (formula "8"))
+       (builtin "One Step Simplification" (formula "1"))
+      (rule "true_left" (formula "1"))
+      (rule "assignment" (formula "7") (term "1"))
+       (builtin "One Step Simplification" (formula "7"))
+      (rule "methodCallReturn" (formula "7") (term "1"))
+      (rule "assignment" (formula "7") (term "1"))
+       (builtin "One Step Simplification" (formula "7"))
+      (rule "methodCallEmpty" (formula "7") (term "1"))
+       (builtin "One Step Simplification" (formula "7"))
+      (rule "emptyModality" (formula "7") (term "1"))
+       (builtin "One Step Simplification" (formula "7"))
+      (rule "closeTrue" (formula "7"))
+   )
+   (branch "if b_5 false"
+       (builtin "One Step Simplification" (formula "8"))
+       (builtin "One Step Simplification" (formula "1"))
+      (rule "closeFalse" (formula "1"))
+   )
+)
+(branch "if b_3 false"
+    (builtin "One Step Simplification" (formula "8"))
+    (builtin "One Step Simplification" (formula "1"))
+   (rule "notLeft" (formula "1"))
+   (rule "replace_known_right" (formula "7") (term "0,1,1,0,0,0,0") (ifseqformula "6"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "replace_known_right" (formula "7") (term "0,0,1,0") (ifseqformula "6"))
+    (builtin "One Step Simplification" (formula "7"))
+   (rule "replace_known_right" (formula "4") (term "0") (ifseqformula "6"))
+    (builtin "One Step Simplification" (formula "4"))
+   (rule "assignment_read_attribute" (formula "8"))
+   (branch "Normal Execution (t != null)"
+       (builtin "One Step Simplification" (formula "8"))
+      (rule "blockEmpty" (formula "8") (term "1"))
+      (rule "methodCallReturn" (formula "8") (term "1"))
+      (rule "assignment" (formula "8") (term "1"))
+       (builtin "One Step Simplification" (formula "8"))
+      (rule "methodCallEmpty" (formula "8") (term "1"))
+       (builtin "One Step Simplification" (formula "8"))
+      (rule "emptyModality" (formula "8") (term "1"))
+       (builtin "One Step Simplification" (formula "8"))
+      (rule "notRight" (formula "8"))
+      (rule "eqSymm" (formula "1"))
+      (rule "ifElseSplit" (formula "8"))
+      (branch "if b_5 true"
+          (builtin "One Step Simplification" (formula "9"))
+          (builtin "One Step Simplification" (formula "1"))
+         (rule "closeFalse" (formula "1"))
+      )
+      (branch "if b_5 false"
+          (builtin "One Step Simplification" (formula "9"))
+          (builtin "One Step Simplification" (formula "1"))
+         (rule "true_left" (formula "1"))
+         (rule "assignment_read_attribute" (formula "8"))
+         (branch "Normal Execution (t != null)"
+             (builtin "One Step Simplification" (formula "8"))
+            (rule "pullOutSelect" (formula "8") (term "0,1,0") (inst "selectSK=Tree_isRed_0"))
+            (rule "simplifySelectOfAnon" (formula "1"))
+             (builtin "One Step Simplification" (formula "1") (ifInst ""  (formula "8")) (ifInst ""  (formula "6")))
+            (rule "blockEmpty" (formula "9") (term "1"))
+            (rule "applyEq" (formula "1") (term "2,0") (ifseqformula "2"))
+            (rule "elementOfSetMinus" (formula "1") (term "0,0"))
+             (builtin "One Step Simplification" (formula "1"))
+            (rule "ifthenelse_negated" (formula "1") (term "0"))
+            (rule "methodCallReturn" (formula "9") (term "1"))
+            (rule "assignment" (formula "9") (term "1"))
+             (builtin "One Step Simplification" (formula "9"))
+            (rule "methodCallEmpty" (formula "9") (term "1"))
+             (builtin "One Step Simplification" (formula "9"))
+            (rule "emptyModality" (formula "9") (term "1"))
+             (builtin "One Step Simplification" (formula "9"))
+            (rule "notRight" (formula "9"))
+            (rule "applyEqReverse" (formula "2") (term "1") (ifseqformula "1"))
+            (rule "hideAuxiliaryEq" (formula "1"))
+            (rule "Definition_axiom_for_footprint_in_Tree" (formula "1") (term "2,0,0") (ifseqformula "8"))
+            (rule "elementOfUnion" (formula "1") (term "0,0"))
+             (builtin "One Step Simplification" (formula "1"))
+            (rule "eqSymm" (formula "1"))
+            (rule "close" (formula "9") (ifseqformula "1"))
+         )
+         (branch "Null Reference (t = null)"
+            (rule "false_right" (formula "9"))
+             (builtin "One Step Simplification" (formula "1") (ifInst ""  (formula "8")))
+            (rule "closeFalse" (formula "1"))
+         )
+      )
+   )
+   (branch "Null Reference (t = null)"
+       (builtin "One Step Simplification" (formula "9"))
+       (builtin "One Step Simplification" (formula "1") (ifInst ""  (formula "7")))
+      (rule "closeFalse" (formula "1"))
+   )
+)
+)
+}

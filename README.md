@@ -1,6 +1,7 @@
 # Verification of Red-Black Trees in KeY
 This repository contains a Java implementation of red-black trees, verified with KeY (https://github.com/KeYProject/key).
-It is the result of my bachlor's thesis *Verification of Red-Black Trees in KeY – A Case Study in Deductive Java Verification*.
+It is the result of my bachlor's thesis:<br>
+J. Stuber: [*Verification of Red-Black Trees in KeY – A Case Study in Deductive Java Verification*](https://publikationen.bibliothek.kit.edu/1000162878), Karlsruhe Institute of Technology (KIT), 2023.
 
 ## Contents of this Repository
 It consists of the following files:
